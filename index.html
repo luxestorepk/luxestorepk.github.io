@@ -1,87 +1,320 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUXE STORE PK</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@600;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:sans-serif;background:#f5f3ef}
-.header{background:#000;color:#fff;padding:20px;text-align:center;border-bottom:2px solid #d4af37}
-.header h1 span{color:#d4af37}
-.badges{display:flex;gap:8px;padding:12px;justify-content:center;background:#fff;flex-wrap:wrap}
-.badges div{background:#fdfaf0;border:1px solid #e8e0c8;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:600}
-.offer{text-align:center;padding:14px;margin:12px;border-radius:14px}
-.o1{background:#111;color:#fff;border:1px solid #d4af37;color:#f7e27b}
-.o2{background:#d4af37;font-weight:800}
-.products{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
-.card{background:#fff;border-radius:18px;overflow:hidden}
-.card img{width:100%;height:230px;object-fit:cover}
-.card-body{padding:12px}.btn{width:100%;background:#111;color:#fff;border:none;padding:11px;border-radius:12px;margin-top:8px;font-weight:700}
-.footer{background:#080808;color:#fff;text-align:center;padding:20px}
-#chatBtn{position:fixed;bottom:20px;right:20px;background:#000;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;border:2px solid #d4af37;cursor:pointer;z-index:999}
-#chatBox{position:fixed;bottom:90px;right:15px;width:310px;background:#fff;border-radius:16px;display:none;flex-direction:column;box-shadow:0 15px 40px rgba(0,0,0,.3);z-index:999;overflow:hidden}
-#chatHead{background:#000;color:#d4af37;padding:12px;display:flex;justify-content:space-between;font-weight:800}
-#chatBody{padding:12px;height:240px;overflow:auto;background:#fcfbf7;font-size:13px}
-#chatBody div{margin:6px 0;padding:8px 11px;border-radius:12px;max-width:85%}.user{background:#111;color:#fff;margin-left:auto!important}.bot{background:#fff;border:1px solid #eee}
-#chatInput{display:flex;border-top:1px solid #eee}#chatInput input{flex:1;border:none;padding:11px;outline:none}#chatInput button{border:none;background:#d4af37;padding:0 14px;font-weight:800}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box
+}
+body{
+font-family:'Inter',sans-serif;
+background:#f5f3ef
+}
+.header{
+background:#000;
+color:#fff;
+padding:22px;
+text-align:center;
+border-bottom:2px solid #d4af37
+}
+.header h1{
+font-family:'Playfair Display',serif;
+letter-spacing:4px
+}
+.header h1 span{
+color:#d4af37
+}
+.header p{
+font-size:9px;
+color:#c7b070;
+letter-spacing:3px;
+margin-top:6px
+}
+.badges{
+display:flex;
+gap:8px;
+padding:12px;
+justify-content:center;
+background:#fff;
+flex-wrap:wrap
+}
+.badges div{
+background:#fdfaf0;
+border:1px solid #e8e0c8;
+padding:6px 12px;
+border-radius:20px;
+font-size:11px;
+font-weight:600
+}
+.offer{
+text-align:center;
+padding:14px;
+margin:12px;
+border-radius:14px
+}
+.o1{
+background:#111;
+color:#f7e27b;
+border:1px solid #d4af37
+}
+.o2{
+background:linear-gradient(135deg,#d4af37,#f7e27b);
+font-weight:800
+}
+.products{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+padding:14px
+}
+.card{
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.07)
+}
+.card img{
+width:100%;
+height:230px;
+object-fit:cover
+}
+.card-body{
+padding:12px
+}
+.price{
+font-weight:800
+}
+.old{
+color:#999;
+font-size:11px;
+text-decoration:line-through;
+margin-left:5px
+}
+.btn{
+width:100%;
+background:#111;
+color:#fff;
+border:none;
+padding:11px;
+border-radius:12px;
+font-weight:700;
+margin-top:8px;
+cursor:pointer
+}
+.footer{
+background:#080808;
+color:#fff;
+text-align:center;
+padding:20px;
+border-top:2px solid #d4af37
+}
+#chatBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#000;
+color:#fff;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+border:2px solid #d4af37;
+cursor:pointer;
+z-index:999
+}
+#chatBox{
+position:fixed;
+bottom:90px;
+right:15px;
+width:310px;
+background:#fff;
+border-radius:16px;
+display:none;
+flex-direction:column;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+z-index:999;
+overflow:hidden
+}
+#chatHead{
+background:#000;
+color:#d4af37;
+padding:12px;
+display:flex;
+justify-content:space-between;
+font-weight:800
+}
+#chatBody{
+padding:12px;
+height:240px;
+overflow:auto;
+background:#fcfbf7;
+font-size:13px
+}
+#chatBody div{
+margin:6px 0;
+padding:8px 11px;
+border-radius:12px;
+max-width:85%
+}
+.user{
+background:#111;
+color:#fff;
+margin-left:auto!important
+}
+.bot{
+background:#fff;
+border:1px solid #eee
+}
+#chatInput{
+display:flex;
+border-top:1px solid #eee
+}
+#chatInput input{
+flex:1;
+border:none;
+padding:11px;
+outline:none
+}
+#chatInput button{
+border:none;
+background:#d4af37;
+padding:0 14px;
+font-weight:800
+}
 </style>
 </head>
 <body>
 
-<div class="header"><h1>LUXE <span>STORE</span></h1><p style="font-size:9px;color:#c7b070;margin-top:6px;letter-spacing:2px">AI Luxury Store — Pakistan's Premium Demo</p></div>
+<div class="header">
+<h1>LUXE <span>STORE</span></h1>
+<p>AI Luxury Store — Pakistan's Premium Demo</p>
+</div>
 
-<div class="badges"><div>✓ COD</div><div>✓ Free Delivery</div><div>✓ AI Support</div><div>✓ Luxury</div></div>
+<div class="badges">
+<div>✓ COD</div>
+<div>✓ Free Delivery</div>
+<div>✓ AI Support</div>
+<div>✓ Luxury</div>
+</div>
 
-<div class="offer o1"><b>Is Jaisi Website Sirf Rs.5000 Me</b></div>
-<div class="offer o2">💻 Code Rs.2500 | Full Website Rs.5000 - WhatsApp: 03716649231</div>
+<div class="offer o1">
+<b>Is Jaisi Website Sirf Rs.5000 Me</b>
+</div>
+
+<div class="offer o2">
+💻 Code Rs.2500 | Full Website Rs.5000 - WhatsApp: 03716649231
+</div>
 
 <div class="products">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&fit=crop">
-<div class="card-body"><h3>Royal Kurta</h3><p>Rs.3,499</p><button class="btn" onclick="wa('Royal Kurta')">WhatsApp Order</button></div>
+<img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&fit=crop&q=80">
+<div class="card-body">
+<h3>Royal Kurta</h3>
+<div class="price">Rs.3,499<span class="old">Rs.6,000</span></div>
+<button class="btn" onclick="wa('Royal Kurta')">WhatsApp Order</button>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&fit=crop">
-<div class="card-body"><h3>Smart Watch</h3><p>Rs.4,999</p><button class="btn" onclick="wa('Smart Watch')">WhatsApp Order</button></div>
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&fit=crop&q=80">
+<div class="card-body">
+<h3>Smart Watch</h3>
+<div class="price">Rs.4,999<span class="old">Rs.8,500</span></div>
+<button class="btn" onclick="wa('Smart Watch')">WhatsApp Order</button>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&fit=crop">
-<div class="card-body"><h3>Sneakers</h3><p>Rs.3,999</p><button class="btn" onclick="wa('Sneakers')">WhatsApp Order</button></div>
+<img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=600&fit=crop&q=80">
+<div class="card-body">
+<h3>Sneakers</h3>
+<div class="price">Rs.3,999<span class="old">Rs.7,000</span></div>
+<button class="btn" onclick="wa('Sneakers')">WhatsApp Order</button>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&fit=crop">
-<div class="card-body"><h3>Ladies Bag</h3><p>Rs.2,499</p><button class="btn" onclick="wa('Ladies Bag')">WhatsApp Order</button></div>
+<img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&fit=crop&q=80">
+<div class="card-body">
+<h3>Ladies Bag</h3>
+<div class="price">Rs.2,499<span class="old">Rs.4,500</span></div>
+<button class="btn" onclick="wa('Ladies Bag')">WhatsApp Order</button>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&fit=crop">
-<div class="card-body"><h3>Luxury Perfume</h3><p>Rs.1,999</p><button class="btn" onclick="wa('Luxury Perfume')">WhatsApp Order</button></div>
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&fit=crop&q=80">
+<div class="card-body">
+<h3>Luxury Perfume</h3>
+<div class="price">Rs.1,999<span class="old">Rs.3,500</span></div>
+<button class="btn" onclick="wa('Luxury Perfume')">WhatsApp Order</button>
+</div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600&fit=crop">
-<div class="card-body"><h3>Premium Abaya</h3><p>Rs.4,999</p><button class="btn" onclick="wa('Premium Abaya')">WhatsApp Order</button></div>
+<img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600&fit=crop&q=80">
+<div class="card-body">
+<h3>Premium Abaya</h3>
+<div class="price">Rs.4,999<span class="old">Rs.8,000</span></div>
+<button class="btn" onclick="wa('Premium Abaya')">WhatsApp Order</button>
+</div>
 </div>
 
 </div>
 
-<div class="footer"><b style="color:#d4af37">LUXE STORE</b><br><br>Code Rs.2500 | Website Rs.5000<br>WhatsApp: 03716649231</div>
+<div class="footer">
+<b style="color:#d4af37">LUXE STORE - Official Demo</b>
+<br><br>
+<span style="font-size:11px">Code Rs.2500 | Website Rs.5000</span>
+<br>
+<span style="font-size:12px;font-weight:800">WhatsApp: 03716649231</span>
+</div>
 
 <div id="chatBtn" onclick="toggleChat()">💬</div>
+
 <div id="chatBox">
-<div id="chatHead"><span>LUXE AI</span><span onclick="toggleChat()">✕</span></div>
-<div id="chatBody"><div class="bot">Salam Waqas bhai! Main LUXE AI hun.</div></div>
-<div id="chatInput"><input id="msg" placeholder="Message..." onkeypress="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()">➤</button></div>
+<div id="chatHead">
+<span>LUXE AI</span>
+<span onclick="toggleChat()" style="cursor:pointer">✕</span>
+</div>
+<div id="chatBody">
+<div class="bot">Salam Waqas bhai! Main LUXE AI hun.</div>
+</div>
+<div id="chatInput">
+<input id="msg" placeholder="Message..." onkeypress="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()">➤</button>
+</div>
 </div>
 
 <script>
-function wa(p){window.open('https://wa.me/923716649231?text=Salam! Mujhe '+p+' chahiye','_blank')}
-function toggleChat(){var b=document.getElementById('chatBox');b.style.display=b.style.display==='flex'?'none':'flex'}
-function sendMsg(){var i=document.getElementById('msg'),b=document.getElementById('chatBody');if(!i.value.trim())return;var m=i.value;b.innerHTML+='<div class="user">'+m+'</div>';i.value='';setTimeout(()=>{b.innerHTML+='<div class="bot">'+m+' available hai! Code Rs.2500 | Website Rs.5000</div>';b.scrollTop=9999},400)}
+function wa(p){
+window.open('https://wa.me/923716649231?text=Salam! Mujhe '+p+' chahiye. Demo: luxestorepk.github.io','_blank')
+}
+function toggleChat(){
+var b=document.getElementById('chatBox');
+b.style.display=b.style.display==='flex'?'none':'flex'
+}
+function sendMsg(){
+var i=document.getElementById('msg');
+var b=document.getElementById('chatBody');
+if(!i.value.trim())return;
+var m=i.value;
+b.innerHTML+='<div class="user">'+m+'</div>';
+i.value='';
+setTimeout(()=>{
+b.innerHTML+='<div class="bot">'+m+' available hai! Code Rs.2500 | Website Rs.5000</div>';
+b.scrollTop=9999
+},400)
+}
 </script>
 
 </body>
