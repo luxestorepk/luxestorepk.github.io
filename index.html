@@ -3,382 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUXE STORE - Premium Pakistan</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<title>LUXE STORE | Pakistan's #1 Premium Luxury Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Inter', sans-serif;
-  background: #fdfaf0;
-  color: #111;
-}
-.header {
-  background: #000000;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
+/* PREMIUM LUXURY RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:#fdfaf6; color:#111; line-height:1.6; overflow-x:hidden; }
+
+/* LUXURY HEADER */
+.luxury-header {
+  background: linear-gradient(180deg, #000000 0%, #111111 100%);
+  color:#fff;
+  padding: 28px 20px;
+  text-align:center;
   border-bottom: 3px solid #d4af37;
+  position:relative;
+  overflow:hidden;
 }
-.header h1 {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 4px;
-  font-size: 28px;
+.luxury-header::before {
+  content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%;
+  background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 60%);
+  animation: shine 6s infinite;
 }
-.header h1 span {
-  color: #d4af37;
+@keyframes shine { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+.logo { font-family:'Playfair Display',serif; font-size:32px; letter-spacing:6px; font-weight:900; position:relative; }
+.logo span { color:#d4af37; }
+.tagline { font-size:11px; color:#d4af37; letter-spacing:4px; margin-top:10px; font-weight:300; position:relative; }
+.live-dot { display:inline-block; width:7px; height:7px; background:#00ff88; border-radius:50%; margin-right:6px; animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* TRUST BADGES */
+.trust-bar {
+  display:flex; gap:10px; padding:16px; justify-content:center; background:#fff;
+  border-bottom:1px solid #f0e6c8; flex-wrap:wrap; box-shadow:0 2px 10px rgba(0,0,0,0.03);
 }
-.header p {
-  font-size: 10px;
-  color: #d4af37;
-  letter-spacing: 3px;
-  margin-top: 8px;
+.trust-bar div {
+  background:linear-gradient(135deg,#fdfaf0,#fff); border:1px solid #e8d9b0; padding:8px 16px;
+  border-radius:25px; font-size:11px; font-weight:600; letter-spacing:0.5px;
 }
-.badges {
-  display: flex;
-  gap: 8px;
-  padding: 14px;
-  justify-content: center;
-  background: #ffffff;
-  flex-wrap: wrap;
+
+/* PREMIUM OFFER */
+.premium-offer {
+  margin:14px; padding:18px; border-radius:14px; text-align:center; font-weight:800;
+  position:relative; overflow:hidden;
 }
-.badges div {
-  background: #fdfaf0;
-  border: 1px solid #e8e0c8;
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
+.offer-black {
+  background: linear-gradient(135deg,#111,#000); color:#f7e27b; border:1px solid #d4af37;
+  font-size:15px; letter-spacing:0.5px;
 }
-.offer {
-  text-align: center;
-  padding: 14px;
-  margin: 12px;
-  border-radius: 12px;
-  font-size: 14px;
+.offer-gold {
+  background: linear-gradient(135deg,#d4af37 0%,#f7e27b 50%,#d4af37 100%);
+  color:#111; font-size:14px; box-shadow:0 8px 25px rgba(212,175,55,0.3);
 }
-.offer1 {
-  background: #111111;
-  color: #f7e27b;
-  border: 1px solid #d4af37;
-  font-weight: 700;
+
+/* WHY US SECTION - CLIENT KO IMPRESS KAREGA */
+.why-section {
+  background:#fff; margin:14px; border-radius:18px; padding:20px; border:1px solid #f0e6c8;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
-.offer2 {
-  background: linear-gradient(135deg, #d4af37, #f7e27b);
-  color: #111;
-  font-weight: 800;
-}
-.collection-title {
-  text-align: center;
-  padding: 20px 0 10px 0;
-  font-family: 'Playfair Display', serif;
-  letter-spacing: 3px;
-  font-size: 16px;
-  font-weight: 700;
-}
-.line {
-  width: 60px;
-  height: 2px;
-  background: #d4af37;
-  margin: 8px auto;
-}
+.why-title { font-family:'Playfair Display',serif; text-align:center; font-size:18px; letter-spacing:2px; margin-bottom:16px; }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.why-card { background:#fdfaf6; padding:12px; border-radius:12px; text-align:center; border:1px solid #f5ecd0; }
+.why-card b { display:block; font-size:13px; margin-bottom:4px; }
+.why-card span { font-size:11px; color:#666; }
+
+/* COLLECTION */
+.collection-head { text-align:center; padding:28px 0 12px 0; }
+.collection-head h2 { font-family:'Playfair Display',serif; letter-spacing:4px; font-size:20px; font-weight:700; }
+.gold-line { width:80px; height:3px; background:linear-gradient(90deg,#d4af37,#f7e27b); margin:12px auto; border-radius:2px; }
+
+/* PRODUCTS - PREMIUM CARDS */
 .products {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  padding: 14px;
+  display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:16px;
 }
-.card {
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-  border: 1px solid #f0e6c8;
+.luxury-card {
+  background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  border:1px solid #f0e6c8; transition:all 0.4s ease; position:relative;
 }
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
+.luxury-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,0.15); }
+.luxury-card img { width:100%; height:220px; object-fit:cover; display:block; transition:0.4s; }
+.luxury-card:hover img { transform:scale(1.05); }
+.badge-new { position:absolute; top:10px; left:10px; background:#000; color:#d4af37; font-size:9px; padding:4px 10px; border-radius:12px; font-weight:800; letter-spacing:1px; z-index:2; }
+.card-info { padding:14px; }
+.card-info h3 { font-size:14px; font-weight:700; margin-bottom:6px; font-family:'Playfair Display',serif; }
+.price-row { display:flex; align-items:center; gap:6px; }
+.now { font-weight:900; font-size:15px; color:#111; }
+.was { color:#aaa; font-size:11px; text-decoration:line-through; }
+.save { background:#e8f5e9; color:#2e7d32; font-size:9px; padding:2px 6px; border-radius:8px; font-weight:700; margin-left:auto; }
+.btn-luxury {
+  width:100%; background:linear-gradient(135deg,#111,#000); color:#fff; border:none;
+  padding:12px; border-radius:12px; font-weight:800; margin-top:12px; cursor:pointer;
+  font-size:13px; letter-spacing:0.5px; border:1px solid #222; transition:0.3s;
 }
-.card-body {
-  padding: 12px;
+.btn-luxury:hover { background:linear-gradient(135deg,#d4af37,#b8962e); color:#000; }
+
+/* FOOTER PREMIUM */
+.luxury-footer {
+  background: linear-gradient(180deg,#080808 0%,#000 100%); color:#fff;
+  text-align:center; padding:32px 20px; margin-top:24px; border-top:3px solid #d4af37;
 }
-.card-body h3 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.price {
-  font-weight: 800;
-  font-size: 14px;
-  color: #111;
-}
-.old-price {
-  color: #999;
-  font-size: 11px;
-  text-decoration: line-through;
-  margin-left: 6px;
-  font-weight: 400;
-}
-.btn {
-  width: 100%;
-  background: #111111;
-  color: #ffffff;
-  border: none;
-  padding: 11px;
-  border-radius: 10px;
-  font-weight: 700;
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 13px;
-}
-.footer {
-  background: #080808;
-  color: #ffffff;
-  text-align: center;
-  padding: 24px 14px;
-  margin-top: 20px;
-  border-top: 2px solid #d4af37;
-}
-.footer b {
-  color: #d4af37;
-  letter-spacing: 1px;
-}
-/* AI CHATBOT CSS - YE AAPKE CODE ME MISSING THA */
+.footer-logo { font-family:'Playfair Display',serif; font-size:22px; letter-spacing:3px; font-weight:700; }
+.footer-logo span { color:#d4af37; }
+
+/* CHATBOT PREMIUM */
 #chatBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #000000;
-  color: #ffffff;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  border: 2px solid #d4af37;
-  cursor: pointer;
-  z-index: 9999;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position:fixed; bottom:22px; right:22px; background:radial-gradient(circle,#111,#000);
+  color:#d4af37; width:64px; height:64px; border-radius:50%; display:flex; align-items:center;
+  justify-content:center; font-size:28px; border:2px solid #d4af37; cursor:pointer; z-index:9999;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4), 0 0 20px rgba(212,175,55,0.3); animation: pulse 2.5s infinite;
 }
+@keyframes pulse { 0%{box-shadow:0 10px 30px rgba(0,0,0,0.4)} 50%{box-shadow:0 10px 30px rgba(0,0,0,0.4), 0 0 30px rgba(212,175,55,0.5)} 100%{box-shadow:0 10px 30px rgba(0,0,0,0.4)} }
 #chatBox {
-  position: fixed;
-  bottom: 90px;
-  right: 15px;
-  width: 310px;
-  background: #ffffff;
-  border-radius: 16px;
-  display: none;
-  flex-direction: column;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  z-index: 9999;
-  overflow: hidden;
-  border: 1px solid #e8e0c8;
+  position:fixed; bottom:100px; right:16px; width:330px; background:#fff; border-radius:18px;
+  display:none; flex-direction:column; box-shadow:0 20px 60px rgba(0,0,0,0.35); z-index:9999; overflow:hidden; border:1px solid #e8d9b0;
 }
-#chatHead {
-  background: #000000;
-  color: #d4af37;
-  padding: 12px 14px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 800;
-  font-size: 14px;
-}
-#chatBody {
-  padding: 12px;
-  height: 260px;
-  overflow-y: auto;
-  background: #fdfaf0;
-  font-size: 13px;
-}
-#chatBody div {
-  margin: 8px 0;
-  padding: 9px 12px;
-  border-radius: 12px;
-  max-width: 85%;
-  line-height: 1.4;
-}
-.userMsg {
-  background: #111111;
-  color: #ffffff;
-  margin-left: auto !important;
-}
-.botMsg {
-  background: #ffffff;
-  border: 1px solid #e8e0c8;
-  color: #111;
-}
-#chatInput {
-  display: flex;
-  border-top: 1px solid #eee;
-  background: #fff;
-}
-#chatInput input {
-  flex: 1;
-  border: none;
-  padding: 12px;
-  outline: none;
-  font-size: 13px;
-}
-#chatInput button {
-  border: none;
-  background: #d4af37;
-  padding: 0 16px;
-  font-weight: 800;
-  cursor: pointer;
-}
+#chatHead { background:linear-gradient(135deg,#000,#111); color:#d4af37; padding:14px 16px; display:flex; justify-content:space-between; font-weight:800; font-size:14px; letter-spacing:1px; }
+#chatBody { padding:14px; height:280px; overflow-y:auto; background:linear-gradient(180deg,#fdfaf6,#fff); font-size:13px; }
+#chatBody div { margin:9px 0; padding:10px 14px; border-radius:14px; max-width:86%; line-height:1.5; animation: msgIn 0.3s ease; }
+@keyframes msgIn { from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:translateY(0)} }
+.userMsg { background:linear-gradient(135deg,#111,#000); color:#fff; margin-left:auto !important; border-bottom-right-radius:4px !important; }
+.botMsg { background:#fff; border:1px solid #f0e6c8; box-shadow:0 2px 8px rgba(0,0,0,0.04); border-bottom-left-radius:4px !important; }
+#chatInput { display:flex; border-top:1px solid #f0e6c8; background:#fff; }
+#chatInput input { flex:1; border:none; padding:14px; outline:none; font-size:13px; background:transparent; }
+#chatInput button { border:none; background:linear-gradient(135deg,#d4af37,#b8962e); padding:0 18px; font-weight:900; cursor:pointer; color:#000; font-size:16px; }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>LUXE <span>STORE</span></h1>
-  <p>PREMIUM COLLECTION - PAKISTAN</p>
+<div class="luxury-header">
+  <div class="logo">LUXE <span>STORE</span></div>
+  <div class="tagline"><span class="live-dot"></span>PREMIUM COLLECTION - LIVE IN PAKISTAN</div>
 </div>
 
-<div class="badges">
-  <div>✓ COD</div>
-  <div>✓ Free Delivery</div>
-  <div>✓ AI Support</div>
-  <div>✓ Luxury</div>
+<div class="trust-bar">
+  <div>✓ Cash On Delivery</div>
+  <div>✓ Free Delivery All Pakistan</div>
+  <div>✓ 24/7 AI Support</div>
+  <div>✓ Luxury Quality</div>
 </div>
 
-<div class="offer offer1">
-  Is Jaisi Website Sirf Rs.5000 Me
+<div class="premium-offer offer-black">
+  ✨ Is Jaisi Premium Website Sirf Rs.5000 Me - Client Khush, Business Grow!
 </div>
 
-<div class="offer offer2">
-  Code Rs.2500 | Full Website Rs.5000 - WhatsApp: 03716649231
+<div class="premium-offer offer-gold">
+  💎 Code Rs.2500 | Full Website + Setup Rs.5000 | WhatsApp: 03716649231
 </div>
 
-<div class="collection-title">
-  OUR COLLECTION
-  <div class="line"></div>
+<div class="why-section">
+  <div class="why-title">WHY 500+ CLIENTS TRUST US?</div>
+  <div class="why-grid">
+    <div class="why-card"><b>⚡ Fast Delivery</b><span>2-3 Days All Pakistan</span></div>
+    <div class="why-card"><b>💎 Luxury Quality</b><span>Premium Fabrics Only</span></div>
+    <div class="why-card"><b>🤖 AI Support</b><span>24/7 Chat Support</span></div>
+    <div class="why-card"><b>💰 Best Price</b><span>Direct Factory Rates</span></div>
+  </div>
+</div>
+
+<div class="collection-head">
+  <h2>OUR LUXURY COLLECTION</h2>
+  <div class="gold-line"></div>
+  <p style="font-size:11px; color:#888; margin-top:6px; letter-spacing:1px;">HANDPICKED PREMIUM PRODUCTS</p>
 </div>
 
 <div class="products">
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&q=80" alt="Royal Kurta - White Kurta Pajama">
-    <div class="card-body">
-      <h3>Royal Kurta</h3>
-      <div class="price">Rs.3,499 <span class="old-price">Rs.6,000</span></div>
-      <button class="btn" onclick="waOrder('Royal Kurta')">WhatsApp Order</button>
+  <div class="luxury-card">
+    <div class="badge-new">NEW</div>
+    <img src="kurta.jpg" alt="Royal White Kurta - Luxury">
+    <div class="card-info">
+      <h3>Royal White Kurta</h3>
+      <div class="price-row">
+        <span class="now">Rs.3,499</span>
+        <span class="was">Rs.6,000</span>
+        <span class="save">42% OFF</span>
+      </div>
+      <button class="btn-luxury" onclick="waOrder('Royal White Kurta - kurta.jpg')">WhatsApp Order</button>
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500&q=80" alt="Smart Watch - No Logo">
-    <div class="card-body">
-      <h3>Smart Watch</h3>
-      <div class="price">Rs.4,999 <span class="old-price">Rs.8,500</span></div>
-      <button class="btn" onclick="waOrder('Smart Watch')">WhatsApp Order</button>
+  <div class="luxury-card">
+    <div class="badge-new">HOT</div>
+    <img src="watch.jpg" alt="Luxury Smart Watch - Gold Black">
+    <div class="card-info">
+      <h3>Gold Black Smart Watch</h3>
+      <div class="price-row">
+        <span class="now">Rs.4,999</span>
+        <span class="was">Rs.8,500</span>
+        <span class="save">41% OFF</span>
+      </div>
+      <button class="btn-luxury" onclick="waOrder('Gold Black Smart Watch - watch.jpg')">WhatsApp Order</button>
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=500&q=80" alt="Sneakers - White No Nike Logo">
-    <div class="card-body">
-      <h3>White Sneakers</h3>
-      <div class="price">Rs.3,999 <span class="old-price">Rs.7,000</span></div>
-      <button class="btn" onclick="waOrder('White Sneakers')">WhatsApp Order</button>
+  <div class="luxury-card">
+    <div class="badge-new">LUXURY</div>
+    <img src="shoes.jpg" alt="White Luxury Sneakers - No Logo">
+    <div class="card-info">
+      <h3>White Luxury Sneakers</h3>
+      <div class="price-row">
+        <span class="now">Rs.3,999</span>
+        <span class="was">Rs.7,000</span>
+        <span class="save">43% OFF</span>
+      </div>
+      <button class="btn-luxury" onclick="waOrder('White Luxury Sneakers - shoes.jpg')">WhatsApp Order</button>
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&q=80" alt="Ladies Bag - No Brand">
-    <div class="card-body">
-      <h3>Ladies Bag</h3>
-      <div class="price">Rs.2,499 <span class="old-price">Rs.4,500</span></div>
-      <button class="btn" onclick="waOrder('Ladies Bag')">WhatsApp Order</button>
+  <div class="luxury-card">
+    <div class="badge-new">TRENDING</div>
+    <img src="bag.jpg" alt="Premium Ladies Bag - Luxury">
+    <div class="card-info">
+      <h3>Premium Ladies Bag</h3>
+      <div class="price-row">
+        <span class="now">Rs.2,499</span>
+        <span class="was">Rs.4,500</span>
+        <span class="save">44% OFF</span>
+      </div>
+      <button class="btn-luxury" onclick="waOrder('Premium Ladies Bag - bag.jpg')">WhatsApp Order</button>
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500&q=80" alt="Luxury Perfume - No Chanel No Brand">
-    <div class="card-body">
-      <h3>Luxury Perfume</h3>
-      <div class="price">Rs.1,999 <span class="old-price">Rs.3,500</span></div>
-      <button class="btn" onclick="waOrder('Luxury Perfume')">WhatsApp Order</button>
+  <div class="luxury-card">
+    <div class="badge-new">PREMIUM</div>
+    <img src="perfume.jpg" alt="Luxury Gold Perfume - Crystal">
+    <div class="card-info">
+      <h3>Luxury Gold Perfume</h3>
+      <div class="price-row">
+        <span class="now">Rs.1,999</span>
+        <span class="was">Rs.3,500</span>
+        <span class="save">43% OFF</span>
+      </div>
+      <button class="btn-luxury" onclick="waOrder('Luxury Gold Perfume - perfume.jpg')">WhatsApp Order</button>
     </div>
   </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&q=80" alt="Premium Abaya - Black Abaya">
-    <div class="card-body">
-      <h3>Premium Abaya</h3>
-      <div class="price">Rs.4,999 <span class="old-price">Rs.8,000</span></div>
-      <button class="btn" onclick="waOrder('Premium Abaya')">WhatsApp Order</button>
+  <div class="luxury-card">
+    <div class="badge-new">ROYAL</div>
+    <img src="abaya.jpg" alt="Royal Black Abaya - Gold Embroidery">
+    <div class="card-info">
+      <h3>Royal Black Abaya</h3>
+      <div class="price-row">
+        <span class="now">Rs.4,999</span>
+        <span class="was">Rs.8,000</span>
+        <span class="save">38% OFF</span>
+      </div>
+      <button class="btn-luxury" onclick="waOrder('Royal Black Abaya - abaya.jpg')">WhatsApp Order</button>
     </div>
   </div>
 
 </div>
 
-<div class="footer">
-  <b>LUXE STORE - Official Demo</b><br><br>
-  <span style="font-size:12px;">Code Rs.2500 | Full Website Rs.5000</span><br>
-  <span style="font-size:14px; font-weight:800; margin-top:6px; display:inline-block;">WhatsApp: 03716649231</span>
+<div class="luxury-footer">
+  <div class="footer-logo">LUXE <span>STORE</span></div>
+  <div style="margin-top:12px; font-size:11px; color:#888; letter-spacing:2px;">PAKISTAN'S TRUSTED LUXURY STORE</div>
+  <div style="margin-top:16px; font-size:12px; color:#d4af37; letter-spacing:1px;">500+ Happy Clients | 4.9★ Rating</div>
+  <div style="margin-top:16px; background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.2); padding:12px; border-radius:12px; display:inline-block;">
+    <div style="font-size:12px; color:#f7e27b;">Code Rs.2500 | Full Website + Images + Chatbot Rs.5000</div>
+    <div style="font-size:15px; font-weight:900; color:#fff; margin-top:4px;">WhatsApp: 03716649231</div>
+  </div>
+  <div style="margin-top:16px; font-size:10px; color:#555;">© 2026 LUXE STORE - Official Demo by Waqas</div>
 </div>
 
-<!-- AI CHATBOT HTML - YE MISSING THA -->
 <div id="chatBtn" onclick="toggleChat()">💬</div>
 
 <div id="chatBox">
-  <div id="chatHead">
-    <span>LUXE AI Support</span>
-    <span onclick="toggleChat()" style="cursor:pointer;">✕</span>
-  </div>
+  <div id="chatHead"><span>💎 LUXE AI CONCIERGE</span><span onclick="toggleChat()" style="cursor:pointer;">✕</span></div>
   <div id="chatBody">
-    <div class="botMsg">Salam Waqas bhai! Main LUXE AI hun. Koi bhi product pucho, main jawab dunga! 😊</div>
+    <div class="botMsg">Salam! 👋 Main LUXE ka AI Concierge hun. Aapko kaunsa luxury product chahiye? Royal Kurta, Abaya, Perfume? Main turant help karunga! ✨</div>
   </div>
-  <div id="chatInput">
-    <input id="msgInput" placeholder="Message likho..." onkeypress="if(event.key==='Enter'){sendChat()}">
-    <button onclick="sendChat()">➤</button>
-  </div>
+  <div id="chatInput"><input id="msgInput" placeholder="Koi bhi sawal puchiye..." onkeypress="if(event.key==='Enter'){sendChat()}"><button onclick="sendChat()">➤</button></div>
 </div>
 
 <script>
-// WhatsApp Order Function
-function waOrder(productName) {
-  var message = "Salam! Mujhe " + productName + " chahiye. Demo: https://luxestorepk.github.io";
-  var url = "https://wa.me/923716649231?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
+function waOrder(product){
+  var msg = "Salam LUXE STORE! 👋\n\nMujhe ye product chahiye:\n*"+product+"*\n\nLink: https://luxestorepk.github.io\n\nPlease details bhej dein. Shukriya!";
+  var url = "https://wa.me/923716649231?text=" + encodeURIComponent(msg);
+  window.open(url,"_blank");
 }
-
-// AI Chatbot Functions
-function toggleChat() {
-  var box = document.getElementById("chatBox");
-  if (box.style.display === "flex") {
-    box.style.display = "none";
-  } else {
-    box.style.display = "flex";
-  }
+function toggleChat(){
+  var b=document.getElementById("chatBox");
+  b.style.display = b.style.display==="flex" ? "none" : "flex";
 }
-
-function sendChat() {
-  var input = document.getElementById("msgInput");
-  var body = document.getElementById("chatBody");
-  var text = input.value.trim();
-  if (text === "") return;
-
-  body.innerHTML += '<div class="userMsg">' + text + '</div>';
-  input.value = "";
-
-  setTimeout(function() {
-    var reply = text + " available hai! Price Rs.3499-4999. Order ke liye WhatsApp karein 03716649231. Code Rs.2500 | Website Rs.5000";
-    body.innerHTML += '<div class="botMsg">' + reply + '</div>';
-    body.scrollTop = body.scrollHeight;
-  }, 500);
-
-  body.scrollTop = body.scrollHeight;
+function sendChat(){
+  var i=document.getElementById("msgInput"), bd=document.getElementById("chatBody"), t=i.value.trim();
+  if(!t) return;
+  bd.innerHTML += '<div class="userMsg">'+t+'</div>';
+  i.value="";
+  setTimeout(function(){
+    var replies = {
+      "kurta":"White Royal Kurta Rs.3,499 me available hai! Gold buttons + embroidery ke saath. Premium quality! 😍",
+      "abaya":"Royal Black Abaya Rs.4,999 me! Gold embroidery, chiffon fabric. Luxury boutique quality! 🖤",
+      "perfume":"Luxury Gold Crystal Perfume Rs.1,999! Long lasting, premium fragrance. Gift ke liye best! ✨",
+      "watch":"Gold Black Smart Watch Rs.4,999! Leather strap, luxury look. 41% OFF! ⌚",
+      "bag":"Premium Ladies Bag Rs.2,499! Beige color, gold hardware. Trending item! 👜",
+      "shoes":"White Luxury Sneakers Rs.3,999! No logo, pure white, premium comfort! 👟"
+    };
+    var lower = t.toLowerCase();
+    var found = "Ye product available hai! Rs.3,499-4,999 range me. WhatsApp pe 03716649231 pe message karein, turant reply milega! 💎";
+    for(var k in replies){ if(lower.includes(k)){ found=replies[k]; break; } }
+    bd.innerHTML += '<div class="botMsg">'+found+'<br><br><small style="color:#d4af37;">➡️ Order ke liye WhatsApp button dabayein</small></div>';
+    bd.scrollTop=bd.scrollHeight;
+  },600);
+  bd.scrollTop=bd.scrollHeight;
 }
 </script>
 
 </body>
-  </html>
+</html>
